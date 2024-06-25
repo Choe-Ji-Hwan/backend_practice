@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!-- 이러면, thymeleaf 엔진 사용 가능, th로 선언. -->
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+<!-- 사용, 여기서 data는 모델에 넣었던 key 역할, value 값으로 매핑 되어 출력. -->
+<p th:text="'안녕하세요~ ' + ${data}">인식되지 않는 문장.</p>
+</body>
+</html>
