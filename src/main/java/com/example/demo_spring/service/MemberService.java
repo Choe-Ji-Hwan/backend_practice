@@ -2,7 +2,8 @@ package com.example.demo_spring.service;
 
 import com.example.demo_spring.domain.Member;
 import com.example.demo_spring.repository.MemberRepository;
-import com.example.demo_spring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,11 +11,12 @@ import java.util.Optional;
 /**
  * 멤버 관련 서비스 (멤버 함수는 비즈니스 용어로 사용 하는 것이 쉬움)
  */
-
+@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
