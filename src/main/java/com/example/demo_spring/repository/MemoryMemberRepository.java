@@ -1,14 +1,12 @@
 package com.example.demo_spring.repository;
 
 import com.example.demo_spring.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     // static 공유 변수기 때문에, concurrent HashMap 써야 되는데 예제라, 기본 HashMap 사용.
