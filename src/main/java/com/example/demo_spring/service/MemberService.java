@@ -3,13 +3,16 @@ package com.example.demo_spring.service;
 import com.example.demo_spring.domain.Member;
 import com.example.demo_spring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 /**
  * 멤버 관련 서비스 (멤버 함수는 비즈니스 용어로 사용 하는 것이 쉬움)
+ * jpa 에서 트랜잭션 데이터를 저장하거나 변경할 때, @Transactional 필요.
  */
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -21,6 +24,7 @@ public class MemberService {
 
     /**
      * 회원 가입
+     * jpa 에서 트랜잭션 데이터를 저장하거나 변경할 때, @Transactional 필요.
      */
     public Long join(Member member) {
         // 같은 이름의 중복 회원은 안된다.
